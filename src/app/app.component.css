@@ -1,0 +1,317 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  color: #1f2022;
+  font-weight: 600;
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.3);
+  /* border: 1px solid #eee; */
+}
+
+.toolbar a {
+  color: #1f2022;
+}
+
+.toolbar .logo {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #faceboock-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+.toolbar #faceboock-persone {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+  opacity: 0.8;
+}
+
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-img mat-card {
+  width: 800px;
+  height: 300px;
+  transition: all 0.3s  ;
+}
+
+mat-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.mat-card-image {
+  background-image: url('../assets/house.jpeg');
+  background-repeat: inherit;
+}
+
+#div2 {
+  width: 992px;
+  margin-bottom: 12px;
+}
+
+#div2 {
+  overflow-x: scroll;
+}
+.categorie{
+  display: flex;
+}
+
+.categorie-item{
+  height: 100px;
+  width: 100px;
+  padding: 16px;
+  margin: 0 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  transition: all 0.3s  ;
+}
+
+.categorie-item img{
+  position: absolute;
+  margin-top: 10px;
+  width: 80px;
+}
+
+.categorie-item mat-card-content mat-card-title {
+  position: relative;
+  font-size: 14px;
+  top: 80px;
+
+}
+.price{
+  color: #0da75f;
+  font-weight: 900;
+}
+
+footer mat-list mat-list-item{
+  display: inline-block;
+}
+
+.like{
+  position: absolute;
+ 
+  top: 2%;
+  right: 2%;
+  
+}
+
+.like-no{
+  color : #161515;
+  background: url("../assets/dislike.svg");
+
+}
+
+.like-yes{
+  color: #f44336;
+  background: url("../assets/like.svg");
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 40px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+/* .card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+} */
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+}
+
+svg#rocket-smoke {
+  height: calc(100vh - 95px);
+  position: absolute;
+  top: 10px;
+  right: 180px;
+  z-index: -10;
+}
+
+a,
+a:visited,
+a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+
+.circle-link {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 8px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 1s ease-out;
+}
+
+.circle-link:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  .start-img mat-card {
+    width: 400px;
+    transition: all 0.3s  ;
+  }
+}
+
+@media screen and (max-width: 575px) {
+
+  .start-img mat-card {
+    width: 350px;
+    height: 200px;
+    transition: all 0.3s  ;
+  }
+
+  #div2 {
+    width: 400px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+
+  .categorie-item img{
+    width: 50px;
+  }
+
+  .categorie-item{
+    width: 100px;
+    height: 100px;
+    padding: 8px;
+    transition: all 0.3s  ;
+  }
+
+  .customer-footer button{
+    margin: 0 12px;
+  }
+  /* .product{
+    width: 100px;
+  } */
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .customer-footer{
+    visibility: hidden;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .customer-footer{
+    visibility: hidden;
+  }
+}
+
+/* www.minfopragov@gmail.com */
