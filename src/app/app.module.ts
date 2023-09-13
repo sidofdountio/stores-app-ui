@@ -12,13 +12,28 @@ import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu'; 
 import {MatListModule} from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CustomerComponent } from './customer/customer.component';
+import { CartComponent } from './cart/cart.component';
+import { CustomPipe } from './custom.pipe';
+import { DetailsComponent } from './details/details.component';
+import { PageNotFoundComponent } from './page.not.found/page.not.found.component';
+import { HomeComponent } from './home/home.component';
+import {MatDividerModule} from '@angular/material/divider'; 
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerComponent,
+    CartComponent,
+    CustomPipe,
+    DetailsComponent,
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatButtonModule,
@@ -28,6 +43,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatMenuModule,
     MatListModule,
     MatTooltipModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
