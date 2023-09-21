@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatBadgeModule} from '@angular/material/badge'; 
-import {MatButtonModule} from '@angular/material/button';
+import {MatButtonModule, MatFabButton} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatMenuModule} from '@angular/material/menu'; 
@@ -17,9 +17,10 @@ import { CartComponent } from './cart/cart.component';
 import { CustomPipe } from './custom.pipe';
 import { DetailsComponent } from './details/details.component';
 import { PageNotFoundComponent } from './page.not.found/page.not.found.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './web/home.component';
 import {MatDividerModule} from '@angular/material/divider'; 
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatBadgeModule,
     MatIconModule,
+    MatButtonModule,
     MatCardModule,
     MatMenuModule,
     MatListModule,
