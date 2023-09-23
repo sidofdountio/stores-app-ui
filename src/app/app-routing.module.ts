@@ -6,6 +6,7 @@ import { DetailsComponent } from './details/details.component';
 import { TemplatePageTitleStrategy } from 'src/app/template.page.title.strategy';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './web/home.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 const routes: Routes = [
 
@@ -20,6 +21,16 @@ const routes: Routes = [
     title: "Cart"
   },
   {
+    path: 'details/:id',
+    title: 'Details',
+    component: DetailsComponent
+  },
+  {
+    path: 'admin',
+    title: 'admin',
+    component: AdminComponent
+  },
+  {
     path: '',
     redirectTo: "/store",pathMatch: 'full' ,
     title: 'home'
@@ -29,11 +40,6 @@ const routes: Routes = [
     title: 'Page not found',
     component: PageNotFoundComponent,
 
-  },
-  {
-    path: 'details/:id',
-    title: 'Details',
-    component: DetailsComponent
   }
 ];
 
