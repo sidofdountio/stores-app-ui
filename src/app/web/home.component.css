@@ -1,0 +1,197 @@
+.spacer {
+    flex: 1;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    color: #1f2022;
+    font-weight: 600;
+    box-shadow: 5px 1px 10px rgba(0, 0, 0);
+    border: 1px solid #eee;
+
+}
+
+.toolbar a {
+    color: #1f2022;
+
+}
+
+.toolbar .logo {
+    margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+    height: 40px;
+    margin: 0 16px;
+}
+
+.toolbar #faceboock-logo {
+    height: 40px;
+    margin: 0 16px;
+}
+
+.toolbar #faceboock-persone {
+    height: 40px;
+    margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+    opacity: 0.8;
+}
+.toolbar .store{
+    margin-left: 15px;
+}
+
+.cover {
+    background-image: url('/assets/house.jpeg');
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+#div2 {
+    width: 1200px;
+    height: 110px;
+    margin-bottom: 10px;
+}
+
+#div2 {
+    overflow-x: scroll;
+}
+
+.categorie {
+    display: flex;
+}
+
+.categorie-item {
+    height: 70px;
+    width: 70px;
+    padding: 1px;
+    margin: 0 8px 1px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    transition: all 0.3s;
+    border: 1px solid #333;
+}
+
+.categorie-item img {
+    position: absolute;
+    width: 100%;
+    display: block;
+}
+
+.categorie-item mat-card-content mat-card-title {
+    position: relative;
+    font-size: 14px;
+    top: 60px;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    max-width: 400px;
+    margin: 20px 1px 0;
+    border: 1px solid #000;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #333;
+    background-color: white;
+    position: relative;
+
+}
+
+.product img {
+    width: 100%;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.price {
+    color: #0da75f;
+    font-weight: 900;
+}
+
+#like {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+
+}
+
+.unfavorite {
+    color: #161515;
+}
+
+.favorite {
+    color: #f44336;
+}
+.menu-footer{
+    display: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+    .toolbar .store{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 575px) {
+    #div2 {
+        width: 400px;
+        height: 100px;
+        margin-bottom: 12px;
+    }
+
+    .product {
+        max-width: 150px;
+        margin: 10px 5px 0;
+        border: 1px solid #000;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px #333;
+        background-color: white;
+        position: relative;
+    }
+    .price {
+        font-size: 14px;
+    }
+    .menu-footer{
+        display: block;
+    }
+    .menu-footer ul{
+        max-width: 400px;
+        background-color: white;
+        border-radius: 15px;
+        display: flex;
+        border: 1px solid #333;
+      
+    }
+    .menu-footer ul li{
+        margin: 10px;
+        background-color: white;
+        box-shadow: 5px 5px 10px 0 #333;
+        border-radius: 50%;
+
+    }
+}
