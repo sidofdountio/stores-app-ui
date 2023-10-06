@@ -3,6 +3,7 @@ import { Route, Router } from '@angular/router';
 import { Orders } from '../model/orders';
 import { AppService } from '../service/app-service.service';
 import { BehaviorSubject } from 'rxjs';
+import { CartItem } from '../model/cartItem';
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +11,10 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  orders: Orders[] = [];
-  orderList = new BehaviorSubject<Orders[]>([]);
+  // cartItem:CartItem
+  cartItem: CartItem[] = [];
+  // Behavior cartItem:CartItem
+  cartItem$ = new BehaviorSubject<CartItem[]>([]);
   title: any = "Lyfe comapny";
   amount: number = 0;
   cartQuantity: number = 1;
@@ -29,30 +32,30 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/store']);
   }
   onGetOrders(): void {
-    this.orders = this.appService.getOrders();
-    this.itemQuantity = this.orders.length;
-    this.orderList.next(this.orders);
+    this.cartItem = this.appService.getItem();
+    this.itemQuantity = this.cartItem.length;
+    this.cartItem$.next(this.cartItem);
   }
-
-  addQuantity(item: Orders) {
-    for (let index = 0; index < this.orderList.value.length; index++) {
-      if (item.product.id === this.orderList.value[index].product.id) {
-        this.orderList.value[index].quantity += 1;
+  
+  addQuantity(item: CartItem) {
+    for (let index = 0; index < this.cartItem$.value.length; index++) {
+      if (item.product.id === this.cartItem$.value[index].product.id) {
+        this.cartItem$.value[index].quantity += 1;
         this.onGetAmountOfOrder();
         console.log("Add quantity");
       }
     }
   }
 
-  removeQuantity(item: Orders) {
-    for (let index = 0; index < this.orderList.value.length; index++) {
-      if (item.product.id === this.orderList.value[index].product.id) {
-        if (this.orderList.value[index].quantity == 1) {
-          this.orderList.value[index].quantity = 1;
+  removeQuantity(item: CartItem) {
+    for (let index = 0; index < this.cartItem$.value.length; index++) {
+      if (item.product.id === this.cartItem$.value[index].product.id) {
+        if (this.cartItem$.value[index].quantity == 1) {
+          this.cartItem$.value[index].quantity = 1;
           this.onGetAmountOfOrder();
         }
-        if (this.orderList.value[index].quantity > 1) {
-          this.orderList.value[index].quantity -= 1;
+        if (this.cartItem$.value[index].quantity > 1) {
+          this.cartItem$.value[index].quantity -= 1;
           this.onGetAmountOfOrder();
         }
         console.log("Remove quantity");
@@ -64,26 +67,27 @@ export class CartComponent implements OnInit {
     var amt = 0;
     var unitPrice = 0;
     var qty = 0;
-    if (this.orderList.value.length == 0) {
+    if (this.cartItem$.value.length == 0) {
       this.amount = 0;
     }
-    if (this.orderList.value.length >= 1) {
-      for (let index = 0; index < this.orderList.value.length; index++) {
-        qty = this.orderList.value[index].quantity;
-        unitPrice = this.orderList.value[index].product.price;
+    if (this.cartItem$.value.length >= 1) {
+      for (let index = 0; index < this.cartItem$.value.length; index++) {
+        qty = this.cartItem$.value[index].quantity;
+        unitPrice = this.cartItem$.value[index].product.price;
         amt += qty * unitPrice;
       }
     }
     this.amount = amt;
   }
 
-  onRemoveItem(item: Orders) {
-    for (let index = 0; index < this.orderList.value.length; index++) {
-      if (item.product.id === this.orderList.value[index].product.id) {
-        this.orderList.value.splice(index,1)
+  onRemoveItem(item: CartItem) {
+    for (let index = 0; index < this.cartItem$.value.length; index++) {
+      if (item.product.id === this.cartItem$.value[index].product.id) {
+        this.cartItem$.value.splice(index,1)
       }
     }
-    this.itemQuantity = this.orders.length;
+    this.itemQuantity = this.cartItem.length;
+    //TODO: Update value of total after removing item.
   }
 
 }

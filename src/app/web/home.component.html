@@ -6,14 +6,14 @@
     <a routerLink="/" class="store" title="Store"><mat-icon>store</mat-icon></a>
     <div class="spacer"></div>
 
-
+    <a routerLink="/admin" routerLinkActive="active" ariaCurrentWhenActive="page">Admin</a>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="#" title="Twitter">
         <span id="twitter-logo"><i class="bi bi-twitter"></i></span>
     </a>
-    <a href="#" target="_blank" rel="noopener" title="Faceboock">
+    <a href="#" matTooltip="Faceboock">
         <span id="faceboock-logo"><i class="bi bi-facebook"></i></span>
     </a>
-    <a href="#" target="_blank" rel="noopener" title="Person">
+    <a matTooltip="Person" routerLinkActive="active" routerLink="/login">
         <span id="faceboock-persone"><i class="bi bi-person-circle"></i></span>
     </a>
 </div>

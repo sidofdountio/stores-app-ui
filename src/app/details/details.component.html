@@ -1,1 +1,35 @@
 <p>details works!</p>
+<!-- /** Based on the screen size, switch from standard to one column per row */
+cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+  map(({ matches }) => {
+    if (matches) {
+      return [
+        { title: 'Daily sale', cols: 1, rows: 1 },
+        { title: 'Month sale', cols: 1, rows: 1 },
+        { title: 'Orders', cols: 1, rows: 1 },
+        { title: 'Visite', cols: 1, rows: 1 }
+      ];
+    }
+
+    return [
+      { title: 'Daily sale', cols: 1, rows: 1 },
+      { title: 'Month sale', cols: 1, rows: 1 },
+      { title: 'Orders', cols: 1, rows: 1 },
+      { title: 'Visite', cols: 1, rows: 1 }
+    ];
+  })
+); -->
+
+
+<!-- <div *ngIf="card.title === 'Daily sale' ">
+    Daily sale
+  </div>
+  <div *ngIf="card.title === 'Month sale' ">
+    Month sale
+  </div>
+  <div *ngIf="card.title === 'Visite' ">
+    Visite
+  </div>
+  <div *ngIf="card.title === 'Orders' ">
+    Orders
+  </div> -->

@@ -4,16 +4,13 @@ import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page.not.found/page.not.found.component';
 import { DetailsComponent } from './details/details.component';
 import { TemplatePageTitleStrategy } from 'src/app/template.page.title.strategy';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './web/home.component';
-import { AdminComponent } from './admin/admin/admin.component';
 
 const routes: Routes = [
-
+  
   {
-    path: 'store',
+    path: '',
     component: HomeComponent,
-    title: "Store"
   },
   {
     path: 'cart',
@@ -26,20 +23,17 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: 'admin',
-    title: 'admin',
-    component: AdminComponent
+    path: 'store',
+    component: HomeComponent,
+    title: "Store"
   },
   {
-    path: '',
-    redirectTo: "/store",pathMatch: 'full' ,
-    title: 'home'
+    path: 'not-found',
+    component: PageNotFoundComponent
   },
   {
     path: '**',
-    title: 'Page not found',
-    component: PageNotFoundComponent,
-
+    redirectTo: '/not-found',
   }
 ];
 
@@ -51,3 +45,6 @@ const routes: Routes = [
   ]
 })
 export class AppRoutingModule { }
+export const AppRouteComponent = [
+  HomeComponent, DetailsComponent, CartComponent, PageNotFoundComponent, CartComponent
+]

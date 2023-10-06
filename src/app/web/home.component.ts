@@ -1,9 +1,8 @@
 import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Orders } from '../model/orders';
-import { Product } from '../model/product-interface';
-import { Route, Router } from '@angular/router';
+import { Product } from '../model/product';
+import { Router } from '@angular/router';
 import { AppService } from '../service/app-service.service';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
   products: Product[] | undefined | null;
-  
+
   price: number = 0;
   numberOfItemInTheCart: number = 0;
   title: any = "Lyfe Comapany";
@@ -22,11 +21,10 @@ export class HomeComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.onGetProducts();
     this.onNumberOfItem();
-   
+
   }
 
   ngAfterViewInit() {
-    
   }
 
   onLoaderOrder(): void {
@@ -34,24 +32,23 @@ export class HomeComponent implements AfterViewInit, OnInit {
     console.log("Move to cart..");
   }
 
-
   onGetProducts(): void {
     this.products = this.appService.getProducts()
   }
   onToggleFavorite(product: Product) {
-    product.isFavorite = !product.isFavorite;    
+    product.isFavorite = !product.isFavorite;
   }
+
   public onPlaceOrder(product: Product): void {
     this.appService.addProductCart(product);
-    this.numberOfItemInTheCart =this.appService.getOrders().length;
+    this.numberOfItemInTheCart = this.appService.getItem().length;
   }
 
-  public onNumberOfItem():void{
-   
+  public onNumberOfItem(): void {
   }
 
-  public onGetOrders():Orders[]{
-    return this.appService.getOrders();
+  public onGetOrders(): Orders[] {
+    return this.appService.getItem();
   }
 
 }

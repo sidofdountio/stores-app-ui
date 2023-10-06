@@ -1,6 +1,5 @@
 .grid-container {
   margin: 20px;
-  background-color: whitesmoke;
 }
 
 .dashboard-card {
@@ -9,14 +8,12 @@
   left: 15px;
   right: 15px;
   bottom: 15px;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px #333;
 }
 
 .more-button {
   position: absolute;
   top: 5px;
-  right: 10px;
+  right: 5px;
 }
 
 .dashboard-card-content {

@@ -19,6 +19,7 @@ body {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: whitesmoke;
 }
 
 h1,
@@ -34,15 +35,9 @@ p {
   margin: 0;
 }
 
-/* .content {
-  display: flex;
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 960px;
-  flex-direction: column;
-  align-items: center;
-} */
-
+.spacer {
+  flex: 1;
+}
 
 a,
 a:visited,
@@ -60,20 +55,11 @@ ul {
 }
 
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
-}
-
 .card {
   all: unset;
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
-  height: 40px;
-  width: 200px;
   margin: 0 8px 16px;
   padding: 16px;
   display: flex;
@@ -81,22 +67,20 @@ ul {
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  line-height: 24px;
 }
 
- /* "node_modules/bootstrap/dist/css/bootstrap.min.css", */
+/* admin margin */
+.grid-container {
+  margin: 20px;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {}
 
 @media screen and (max-width: 575px) {}
 
-
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

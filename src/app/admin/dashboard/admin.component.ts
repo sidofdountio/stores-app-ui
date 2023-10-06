@@ -21,9 +21,9 @@ export class AdminComponent {
       }
 
       return [
-        { title: 'Daily sale', cols: 2, rows: 1 },
+        { title: 'Daily sale', cols: 1, rows: 1 },
         { title: 'Month sale', cols: 1, rows: 1 },
-        { title: 'Orders', cols: 1, rows: 2 },
+        { title: 'Orders', cols: 1, rows: 1 },
         { title: 'Visite', cols: 1, rows: 1 }
       ];
     })

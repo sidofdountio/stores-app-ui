@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="mb-3">
+                <h2>Login</h2>
+                <p>{{message}}</p>
+                <form [formGroup]="form">
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline">
+                            <input matInput value="" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-3">
+                        <mat-form-field appearance="outline">
+                            <input matInput value="" formControlName="price">
+                        </mat-form-field>
+                    </div>
+                </form>
+
+            </div>
+            <div class="mb-3">
+                <button type="button" mat-raised-button color="" (click)="onLogIn()">Login</button>
+                <button type="button" mat-raised-button color="warn" (click)="onLogout()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

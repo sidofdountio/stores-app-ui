@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Edit this current product {{ data.name }}</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <input matInput value="{{ data.name }}" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <input matInput value="{{ data.price }}" formControlName="price">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn"  [disabled]="!form.valid" (click)="save()">Save</button>
+  <button mat-raised-button (click)="cancel()">Cancel</button>
+</div>

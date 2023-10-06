@@ -1,28 +1,30 @@
 <div class="toolbar" role="banner">
     <a class="logo "><span class="">{{title}}</span></a>
     <div class="spacer"></div>
-    <a title="Shopping cart"><mat-icon class="shop" matBadge="{{  itemQuantity }}" matBadgeColor="primary" >shopping_cart</mat-icon></a>
+    <a title="Shopping cart"><mat-icon class="shop" matBadge="{{  itemQuantity }}"
+            matBadgeColor="primary">shopping_cart</mat-icon></a>
 </div>
 <div class="container mt-5 pt-5">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 mb-2">
+        <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
             <mat-list class="cart">
-                <div *ngIf="orders.length !== 0">
-                    <mat-list-item *ngFor="let order of orders">
+                <div *ngIf="cartItem.length !== 0">
+                    <mat-list-item *ngFor="let order of cartItem">
                         <img src="{{ order?.product?.imageUrl }}" alt="">
                         <span class="product-name">{{ order?.product?.name }}</span>
                         <span class="product-price">{{ order?.product?.price| CustomCurrency }} </span>
-                        <button type="button" mat-mini-fab color="warn" class="delete" (click)="onRemoveItem(order)" ><mat-icon>delete</mat-icon></button>
+                        <button type="button" mat-mini-fab color="warn" class="delete"
+                            (click)="onRemoveItem(order)"><mat-icon>delete</mat-icon></button>
                         <div class="update-quantity">
                             <button type="button" mat-mini-fab color="" (click)="removeQuantity(order)"
                                 class="customer-btn me-5"><mat-icon>remove</mat-icon></button>
-                            <span>{{  order?.quantity }}</span>
+                            <span>{{ order?.quantity }}</span>
                             <button type="button" mat-mini-fab color="" (click)="addQuantity(order)"
                                 class="customer-btn ms-5"><mat-icon>add</mat-icon></button>
                         </div>
                     </mat-list-item>
                 </div>
-                <div  *ngIf="orders.length == 0" class="text-center">
+                <div *ngIf="cartItem.length == 0" class="text-center">
                     <p>No item in the cart !</p>
                 </div>
             </mat-list>
@@ -61,6 +63,7 @@
         <div class="col-sm-12">
             <button type="button" mat-raised-button class="cancel" (click)="backToStore()"><mat-icon>store</mat-icon>
                 store</button>
+               
             <button type="button" mat-raised-button class="checkout" (click)="checkout()">
                 <mat-icon>shopping_cart</mat-icon> buy</button>
         </div>
