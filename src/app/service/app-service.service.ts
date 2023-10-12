@@ -1,17 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
 import { environment } from 'src/environment/environment';
 import { Product } from '../model/product';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { Orders } from '../model/orders';
+import { Observable, BehaviorSubject, throwError } from 'rxjs';
+import { tap, catchError, map } from 'rxjs/operators';
 import { CartItem } from '../model/cartItem';
+import { CustomResponse } from '../model/custom-response';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class AppService {
-  baseUrl: string = environment.URL;
+
+  private readonly baseUrl: string = environment.URL;
   // Behavior cartItem:CartItem
   private cartItem$ = new BehaviorSubject<CartItem[]>([]);
   // cartItem:CartItem.
@@ -40,7 +40,7 @@ export class AppService {
 
   public editeProduct(productToUdapte: Product) {
     for (let p of this.productList.value) {
-      if (p.id === productToUdapte.id){
+      if (p.id === productToUdapte.id) {
         p.name = productToUdapte.name;
         console.log(p);
       }
@@ -61,4 +61,32 @@ export class AppService {
     return this.cartItem$.value;
   }
 
+  // Get users
+  public getUsers(): Observable<CustomResponse> {
+    return this.http.get<CustomResponse>(`${this.baseUrl}/user/users`);
+  }
+
+ 
+
+  users$ = <Observable<CustomResponse>>this.http
+    .get<CustomResponse>(`${this.baseUrl}/user`,{
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json; charset=utf-8',
+        'Accept'       : 'application/json',
+        "Authorization":`Bearer ${localStorage.getItem('token')
+      }`})
+    })
+    .pipe(
+      tap(console.log),
+      catchError(this.handleError)
+    );
+
+  handleError(error: HttpErrorResponse): Observable<never> {
+    
+    return throwError(() => "Error code : " + error.status);
+  }
+
+
 }
+
+

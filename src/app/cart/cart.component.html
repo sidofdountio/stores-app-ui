@@ -11,16 +11,16 @@
                 <div *ngIf="cartItem.length !== 0">
                     <mat-list-item *ngFor="let order of cartItem">
                         <img src="{{ order?.product?.imageUrl }}" alt="">
-                        <span class="product-name">{{ order?.product?.name }}</span>
+                        <span class="product-name ">{{ order?.product?.name }}</span>
                         <span class="product-price">{{ order?.product?.price| CustomCurrency }} </span>
                         <button type="button" mat-mini-fab color="warn" class="delete"
                             (click)="onRemoveItem(order)"><mat-icon>delete</mat-icon></button>
-                        <div class="update-quantity">
+                        <div class="update-quantity mt-1">
                             <button type="button" mat-mini-fab color="" (click)="removeQuantity(order)"
-                                class="customer-btn me-5"><mat-icon>remove</mat-icon></button>
+                                class="customer-btn "><mat-icon>remove</mat-icon></button>
                             <span>{{ order?.quantity }}</span>
                             <button type="button" mat-mini-fab color="" (click)="addQuantity(order)"
-                                class="customer-btn ms-5"><mat-icon>add</mat-icon></button>
+                                class="customer-btn addQuantity"><mat-icon>add</mat-icon></button>
                         </div>
                     </mat-list-item>
                 </div>

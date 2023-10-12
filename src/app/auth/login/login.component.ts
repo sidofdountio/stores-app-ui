@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Authentication } from '../model/authentication';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationRequest } from '../model/authentication-request';
+import { HttpErrorResponse } from '@angular/common/http';
+import { of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -11,36 +14,34 @@ import { Authentication } from '../model/authentication';
 })
 export class LoginComponent implements OnInit {
   message: string = "";
-  authentication!: Authentication
   form = this.fb.group({
-    email: this.fb.nonNullable.control("",{
-      validators: [Validators.required,Validators.email],
+    email: this.fb.nonNullable.control("", {
+      validators: [Validators.required, Validators.email],
     }),
-    password: ['',[Validators.required,Validators.maxLength(8)]]
+    password: ['', [Validators.required, Validators.minLength(8)]]
   });
   constructor(public authService: AuthService, private router: Router, private fb: FormBuilder) {
-    this.message = this.getMessage();
+
   }
 
   ngOnInit(): void {
+    console.log("Login component");
   }
 
-  getMessage() {
-    return 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
-  onLogIn() {
-    this.message = 'Trying to log in ...';
-    this.authService.login();
-    this.message = this.getMessage();
-
-    this.authentication.email = this.form.value.email;
-    this.authentication.password = this.form.value.password;
-
-    this.router.navigate(['/admin'])
+  onLogIn(): void {
+    this.authService.login$(this.form.value as AuthenticationRequest)
+      .pipe(
+        map((response) => {
+          this.router.navigate(['/admin'])
+        }),
+        catchError((error:string)=>{
+          this.authService.openSnackBarCustorm("username or password not found", "Close")
+          return of({})
+        })
+      )
   }
   onLogout() {
     this.authService.logout();
-    this.message = this.getMessage();
   }
 
 

@@ -38,7 +38,7 @@ mat-list mat-list-item {
     max-height: 200px;
     padding: 10px;
     margin-bottom: 10px;
-    
+    border: 1px solid #eee;
 }
 
 mat-list mat-list-item img {
@@ -71,16 +71,16 @@ mat-list mat-list-item span {
 }
 
 /*  Invoice */
-.price {
+.price,.product-price {
     font-weight: 900;
 }
 
 .invoice {
     border: 1px solid #eee;
     border-radius: 15px;
-    background-color: whitesmoke;
+    background-color: white;
     height: 200px;
-    box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #333;
 }
 
 .invoice li {
@@ -98,8 +98,15 @@ mat-list mat-list-item span {
     box-shadow: 5px 5px 5px #333;
     background-color: #FFF;
 }
-.cancel{
+
+.cancel {
     margin-right: 5rem;
+}
+.addQuantity{
+    margin-left: 13rem;
+}
+mat-list mat-list-item .delete {
+    margin-left: 1rem;
 }
 
 /* end customer general css */
@@ -107,31 +114,28 @@ mat-list mat-list-item span {
 @media screen and (max-width: 767px) {}
 
 @media screen and (max-width: 575px) {
-    mat-list {
-        max-width: 400px;
-        padding: 10px;
-    }
+   
 
     .cart mat-list-item {
         height: 130px;
     }
 
-    .cart mat-list-item span,
-    img {
-        margin: 2px;
+    .cart mat-list-item img {
+        margin-left: 4px;
     }
 
-    mat-list mat-list-item .delete {
-        margin-left: 20px;
-    }
+   
 
     mat-list mat-list-item img {
         height: 50px;
         width: 50px;
     }
+    .product-price,.product-name{
+        font-size: 14px;
+    }
 
     .update-quantity {
-        padding: 8px;
+        padding: 4px;
     }
 
     .update-quantity span {

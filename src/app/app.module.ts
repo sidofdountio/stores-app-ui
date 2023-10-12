@@ -16,6 +16,7 @@ import { CustomPipe } from './custom.pipe';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'
 import { LayoutModule } from '@angular/cdk/layout';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
@@ -26,6 +27,7 @@ import { DialogMessageComponent } from './message/dialog-message/dialog-message.
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SnackbarComponent } from './message/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CustomPipe,
     AppRouteComponent,
     DialogMessageComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     MatSlideToggleModule,
     MatButtonModule,
     MatBadgeModule,

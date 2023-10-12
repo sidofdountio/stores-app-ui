@@ -8,7 +8,7 @@ export interface CustomResponse{
     message:string;
     developerMessage:string;
     data: {
-        appusers:AppUser[], appuser?:AppUser
+        appusers?:AppUser[], appuser?:AppUser
     }
 
 }

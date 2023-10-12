@@ -1,27 +1,38 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-12">
-            <div class="mb-3">
-                <h2>Login</h2>
-                <p>{{message}}</p>
-                <form [formGroup]="form">
-                    <div class="mb-3">
-                        <mat-form-field appearance="outline">
-                            <input matInput value="" formControlName="email">
-                        </mat-form-field>
-                    </div>
-                    <div class="mb-3">
-                        <mat-form-field appearance="outline">
-                            <input matInput value="" formControlName="price">
-                        </mat-form-field>
-                    </div>
-                </form>
 
+            <div class="form">
+                <div class="mb-3 text-center">
+                    <h2 class="text-primary">Login to <span class="text-uppercase">Lyfecompany</span></h2>
+                    <p>{{ message }}</p>
+                </div>
+                <form [formGroup]="form">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error>Please enter email</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password">
+                        <mat-error>Please provide a password</mat-error>
+                    </mat-form-field>
+                    <button type="button" mat-raised-button color="primary" [disabled]="!form.valid"
+                        (click)="onLogIn()">Log
+                        in</button>
+                </form>
+             
+                <hr>
+                <span>Or</span>
+                <div>
+                    <a  routerLink="" routerLinkActive="active">Register here</a>
+                    <p>&COPY;All right Lyfecompany</p>
+                </div>
             </div>
-            <div class="mb-3">
-                <button type="button" mat-raised-button color="" (click)="onLogIn()">Login</button>
-                <button type="button" mat-raised-button color="warn" (click)="onLogout()">Logout</button>
-            </div>
+        </div>
+        <div class="mb-3">
+            <!-- <button type="button" mat-raised-button color="warn" (click)="onLogout()">Logout</button> -->
         </div>
     </div>
 </div>
