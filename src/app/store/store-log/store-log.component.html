@@ -1,11 +1,10 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-12">
-
+            <h2>LYFECOMPANY</h2>
             <div class="form">
                 <div class="mb-3 text-center">
-                    <h2 class="text-primary">Login to <span class="text-uppercase">Lyfecompany</span></h2>
-                    <p>{{ message }}</p>
+                    <h2 class="text-primary">Connect to your store</h2>
                 </div>
                 <form [formGroup]="form" class="mb-2">
                     <mat-form-field appearance="outline">
@@ -22,16 +21,15 @@
                         (click)="onLogIn()">Log
                         in</button>
                 </form>
-                <span>Or</span>
+                or
                 <div>
-                    <a  routerLink="/login" routerLinkActive="active">Register here</a>
                     <hr>
-                    <p class="text-ceneter">&COPY; All right Lyfecompany</p>
+                    <a  routerLink="/store" routerLinkActive="active">Create your store</a>
+                    
+                    <p class="text-center">&COPY; All right LYFECOMPANY</p>
                 </div>
             </div>
         </div>
-        <div class="mb-3">
-            <!-- <button type="button" mat-raised-button color="warn" (click)="onLogout()">Logout</button> -->
-        </div>
+    
     </div>
 </div>

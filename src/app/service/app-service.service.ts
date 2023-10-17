@@ -71,8 +71,6 @@ export class AppService {
   users$ = <Observable<CustomResponse>>this.http
     .get<CustomResponse>(`${this.baseUrl}/user`,{
       headers: new HttpHeaders({
-        'Content-Type' : 'application/json; charset=utf-8',
-        'Accept'       : 'application/json',
         "Authorization":`Bearer ${localStorage.getItem('token')
       }`})
     })

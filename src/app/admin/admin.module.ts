@@ -42,7 +42,7 @@ import { EditeProfileComponent } from './user/edite-profile/edite-profile.compon
     AdminComponent,
     SideBarComponent,
     EditProductComponent,
-    EditeProfileComponent,
+    EditeProfileComponent
   ],
   imports: [
     CommonModule,

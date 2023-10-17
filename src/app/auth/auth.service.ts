@@ -8,6 +8,7 @@ import { AuthenticationResponse } from './model/authentication-response';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../message/snackbar/snackbar.component';
 import { SnackBarData } from '../model/snack-bar-data';
+import { CustomResponse } from '../model/custom-response';
 
 @Injectable({
   providedIn: 'root'
@@ -27,17 +28,17 @@ export class AuthService {
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
 
-  login$ = (request: AuthenticationRequest)=> <Observable<AuthenticationResponse>>this.http
-  .post<AuthenticationResponse>(`${this.baseUrl}/auth/authenticate`, request)
-  .pipe(
-    map( response=>{
-      this.setAuthToken(response.token);
-    }),
-    tap(console.log),
-    catchError(this.handlerError)
-  );
-    
-  
+  login$ = (userRequest: AuthenticationRequest) => <Observable<AuthenticationResponse>>this.http
+    .post<AuthenticationResponse>(`${this.baseUrl}/auth/authenticate`, userRequest)
+    .pipe(
+      map(response => {
+        const token = response.token;
+        console.log(response.token)
+        this.setAuthToken(token as string);
+        return response;
+      }),
+      catchError(this.handlerError)
+    );
 
   setAuthToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
@@ -48,7 +49,7 @@ export class AuthService {
   }
 
   // Add other HTTP methods as needed (e.g., put, delete, etc.)
-   createAuthorizationHeaders(): HttpHeaders {
+  createAuthorizationHeaders(): HttpHeaders {
     const token = this.getAuthToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return headers;
@@ -57,10 +58,10 @@ export class AuthService {
   // valid token
   isTokenExpired$ = (token: string | null) => <Observable<boolean>>
     this.http.get<boolean>(`${this.baseUrl}/auth/isTokenValid/${token}`)
-    .pipe(
-      tap(console.log),
-      catchError(this.handlerError)
-    );
+      .pipe(
+        tap(console.log),
+        catchError(this.handlerError)
+      );
 
   tokenValid(token: string | null): boolean {
     this.isTokenExpired$(token).pipe(
@@ -68,8 +69,8 @@ export class AuthService {
         this.tokenValid$.next(response);
         tap(console.log)
       }),
-      catchError( (error:string) =>{
-        console.log("error " +error)
+      catchError((error: string) => {
+        console.log("error " + error)
         return of(error)
       })
     )
@@ -78,21 +79,21 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     const token = this.getAuthToken();
-    if ((token === null) && (!this.tokenValid(token))) {
+    if ((token === null) && (!this.tokenValid$.value)) {
       return false;
     }
     return true;
   }
 
-  logout(): void {
-    localStorage.removeItem(this.tokenKey);
-    const header = this.createAuthorizationHeaders();
-    this.http.post(`${this.baseUrl}/auth/logout`,{
-      header
+  logout$ = <Observable<string>> 
+    this.http.post<string>(`http://localhost:8081/logout`, {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${localStorage.getItem('token')
+          }`
+      })
     }).pipe(
       tap(console.log)
     )
-  }
 
   openSnackBarCustorm(message: string, action: string) {
     this._snackBar.openFromComponent(SnackbarComponent, {
@@ -106,7 +107,7 @@ export class AuthService {
     });
   }
 
-  handlerError(error:HttpErrorResponse):Observable<never>{
-    return throwError( ()=> "error :" +error.status)
+  handlerError(error: HttpErrorResponse): Observable<never> {
+    return throwError(() => "error :" + error.status)
   }
 }

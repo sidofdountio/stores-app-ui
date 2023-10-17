@@ -1,7 +1,6 @@
-export interface AppUser{
+export interface User{
     id?:number;
     name:string;
     email:string;
     password:string;
-    enable?:boolean;
 }

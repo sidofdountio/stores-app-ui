@@ -44,7 +44,8 @@ const adminRoutes: Routes = [
           },
           {
             path: '',
-            component: AdminComponent
+            component: AdminComponent,
+            title: 'Mystore'
           }
         ]
       }

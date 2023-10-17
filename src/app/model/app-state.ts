@@ -1,7 +1,7 @@
 import { DataState } from "./data-state";
 
 export interface AppState <T>{
-    dateSate:DataState;
+    dataSate:DataState;
     appData?: T;
     error?: string;
 }

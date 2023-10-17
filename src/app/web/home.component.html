@@ -6,18 +6,21 @@
     <a routerLink="/" class="store" title="Store"><mat-icon>store</mat-icon></a>
     <div class="spacer"></div>
 
-    <a routerLink="/admin" routerLinkActive="active" ariaCurrentWhenActive="page">Admin</a>
-    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="#" title="Twitter">
+    <a aria-label="Lyfecompany on twitter" target="_blank" rel="noopener" href="#" title="Twitter">
         <span id="twitter-logo"><i class="bi bi-twitter"></i></span>
     </a>
-    <a href="#" matTooltip="Faceboock">
+    <a aria-label="Lyfecompany on Faceboock" href="#" matTooltip="Faceboock" title="Faceboock">
         <span id="faceboock-logo"><i class="bi bi-facebook"></i></span>
     </a>
-    <a matTooltip="Person" routerLinkActive="active" routerLink="/login">
-        <span id="faceboock-persone"><i class="bi bi-person-circle"></i></span>
-    </a>
+    <!-- user log -->
+    <button mat-icon-button [matMenuTriggerFor]="menu"> <mat-icon>person</mat-icon> </button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/login" routerLinkActive="active">Sing in</button>
+    <button mat-menu-item routerLink="/connect-to-store" routerLinkActive="active" >Go to store</button>
+    </mat-menu>
 </div>
 <div class="container">
+
     <h3>You'r now on {{ "title" }} !</h3>
     <div class="row mb-3">
         <div class="col-md-12 col-sm-12 col-lg-12">

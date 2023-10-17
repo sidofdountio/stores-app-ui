@@ -16,7 +16,7 @@ import { CustomPipe } from './custom.pipe';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { LayoutModule } from '@angular/cdk/layout';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
@@ -28,6 +28,10 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SnackbarComponent } from './message/snackbar/snackbar.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { StoreLogComponent } from './store/store-log/store-log.component';
+import { GetStartComponent } from './get-start/get-start.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,7 @@ import { SnackbarComponent } from './message/snackbar/snackbar.component';
     CustomPipe,
     AppRouteComponent,
     DialogMessageComponent,
-    SnackbarComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { SnackbarComponent } from './message/snackbar/snackbar.component';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatSlideToggleModule,
+    MatSelectModule,
+    MatCheckboxModule,
     MatButtonModule,
     MatBadgeModule,
     MatIconModule,

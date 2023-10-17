@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, startWith } from 'rxjs/operators';
+import { AuthenticationResponse } from 'src/app/auth/model/authentication-response';
 import { AppState } from 'src/app/model/app-state';
 import { CustomResponse } from 'src/app/model/custom-response';
 import { DataState } from 'src/app/model/data-state';
@@ -19,17 +20,20 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
    this.users()
   }
+   au: AuthenticationResponse = {
+     token: ''
+   }
 
   private users() {
     this.user$ = this.appservice.users$
       .pipe
       (
         map(response => {
-          return { dateSate: DataState.LOADED_STATE, appData: response };
+          return { dataSate: DataState.LOADED_STATE, appData: response };
         }),
-        startWith({ dateSate: DataState.LOADING_STATE }),
+        startWith({ dataSate: DataState.LOADING_STATE }),
         catchError((error: string) => {
-          return of({ dateSate: DataState.ERROR_STATE, error });
+          return of({ dataSate: DataState.ERROR_STATE, error });
         })
       );
   }
@@ -46,7 +50,7 @@ export class CustomerComponent implements OnInit {
     );
   }
 
-  onUsers(): void {
-
+  onUsers():AuthenticationResponse {
+   return this.au;
   }
 }
