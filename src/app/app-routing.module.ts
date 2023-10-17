@@ -4,16 +4,25 @@ import { CartComponent } from './cart/cart.component';
 import { PageNotFoundComponent } from './page.not.found/page.not.found.component';
 import { DetailsComponent } from './details/details.component';
 import { TemplatePageTitleStrategy } from 'src/app/template.page.title.strategy';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './web/home.component';
-import { AdminComponent } from './admin/admin/admin.component';
+import { StoreComponent } from './store/store.component';
+import { StoreLogComponent } from './store/store-log/store-log.component';
+import { GetStartComponent } from './get-start/get-start.component';
 
 const routes: Routes = [
-
   {
-    path: 'store',
+    path: '',
+    component: GetStartComponent
+  },
+  {
+    path: 'get-start',
+    component: GetStartComponent,
+    title: 'Get-start'
+  },
+  {
+    path: 'web',
     component: HomeComponent,
-    title: "Store"
+    title: "web"
   },
   {
     path: 'cart',
@@ -25,21 +34,24 @@ const routes: Routes = [
     title: 'Details',
     component: DetailsComponent
   },
+
   {
-    path: 'admin',
-    title: 'admin',
-    component: AdminComponent
+    path: 'store',
+    component: StoreComponent,
+    title: 'create-store'
   },
   {
-    path: '',
-    redirectTo: "/store",pathMatch: 'full' ,
-    title: 'home'
+    path: 'connect-to-store',
+    component: StoreLogComponent,
+    title: 'connect-to-store'
+  },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent
   },
   {
     path: '**',
-    title: 'Page not found',
-    component: PageNotFoundComponent,
-
+    redirectTo: '/not-found',
   }
 ];
 
@@ -51,3 +63,13 @@ const routes: Routes = [
   ]
 })
 export class AppRoutingModule { }
+export const AppRouteComponent = [
+  HomeComponent,
+  DetailsComponent,
+  CartComponent,
+  PageNotFoundComponent,
+  CartComponent,
+  StoreComponent,
+  StoreLogComponent,
+  GetStartComponent
+]

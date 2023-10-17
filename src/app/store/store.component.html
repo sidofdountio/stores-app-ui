@@ -1,0 +1,64 @@
+<div class="container store mt-5 mb-4">
+    <div class="row">
+        <div class="col-sm-12 mb-3">
+            <h2 class="text-uppercase text-center text-primary fw-bold">Lyfecompany</h2>
+            <h3 class="text-uppercase">Store</h3>
+            <mat-card>
+                <mat-card-content class="info">
+                    <p>Log to your store or create it. This action wil make you owner of <b>Store</b> on
+                        <b>LYFECOMPANY.</b>
+                    </p>
+                    <p>You will be able to</p>
+                    <ol>
+                        <li>Add new products</li>
+                        <li>View orders.</li>
+                        <li>Annalytic of e-commerce</li>
+                        <li>Recive orders and customers list.</li>
+                    </ol>
+                    <p>Fore more informations please read<a href="#" target="_blank" rel="noopener noreferrer"> Terms &&
+                            conditions</a></p>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Create your store</h2>
+            <form class="form" [formGroup]="company">
+                <mat-form-field appearance="outline">
+                    <mat-label>Company name</mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error>Please provide comany name</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone</mat-label>
+                    <input matInput formControlName="phone" type="tel" placeholder="675660321">
+                    <span matTextPrefix>+237</span>
+                    <mat-error>Please enter phone number</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="categorie">
+                        <option value="Clothse">Clothse</option>
+                        <option value="Body oil">Body oil</option>
+                    </mat-select>
+                    <mat-error>Please select categorie</mat-error>
+                </mat-form-field>
+                <div>
+                    <mat-checkbox formControlName="accept">Accept terms and conditions</mat-checkbox>
+                </div>
+                <button type="button" mat-raised-button [disabled]="!company.valid">CREATE</button>
+            </form>
+            or
+            <hr>
+            <a routerLink="/connect-to-store" routerLinkActive="active">Connect to your store</a>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-12 text-center">
+            All right &copy; LYFECOMPANY
+        </div>
+    </div>
+</div>

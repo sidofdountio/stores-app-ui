@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>LYFECOMPANY</h2>
+            <div class="form">
+                <div class="mb-3 text-center">
+                    <h2 class="text-primary">Connect to your store</h2>
+                </div>
+                <form [formGroup]="form" class="mb-2">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error>Please enter email</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password">
+                        <mat-error>Please provide a password</mat-error>
+                    </mat-form-field>
+                    <button type="button" mat-raised-button color="primary" [disabled]="!form.valid"
+                        (click)="onLogIn()">Log
+                        in</button>
+                </form>
+                or
+                <div>
+                    <hr>
+                    <a  routerLink="/store" routerLinkActive="active">Create your store</a>
+                    
+                    <p class="text-center">&COPY; All right LYFECOMPANY</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

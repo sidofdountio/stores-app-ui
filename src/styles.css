@@ -1,6 +1,385 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+:root {
+  --hue-web-svg-display-light: block;
+  --hue-web-svg-display-dark: none;
+  --black: #000;
+  --black-a90: rgb(0 0 0/.9);
+  --black-a75: rgb(0 0 0/.75);
+  --black-a60: rgb(0 0 0/.6);
+  --black-a45: rgb(0 0 0/.45);
+  --black-a30: rgb(0 0 0/.3);
+  --black-a15: rgba(0, 0, 0, 0.15);
+  --black-a12: rgba(0, 0, 0, 0.12);
+  --black-a08: rgba(0, 0, 0, 0.08);
+  --black-a04: rgba(0, 0, 0, 0.04);
+  --white: #fff;
+  --white-a90: rgb(255 255 255/.9);
+  --white-a85: hsla(0, 0%, 100%, 0.85);
+  --white-a75: rgb(255 255 255/.75);
+  --white-a70: hsla(0, 0%, 100%, 0.7);
+  --white-a60: rgb(255 255 255/.6);
+  --white-a55: hsla(0, 0%, 100%, 0.55);
+  --white-a40: hsla(0, 0%, 100%, 0.4);
+  --white-a25: hsla(0, 0%, 100%, 0.25);
+  --white-a18: hsla(0, 0%, 100%, 0.18);
+  --white-a12: hsla(0, 0%, 100%, 0.12);
+  --white-a06: hsla(0, 0%, 100%, 0.06);
+  --blue-10: #f6fbff;
+  --blue-20: #e8f3ff;
+  --blue-30: #d2e9ff;
+  --blue-40: #aad6ff;
+  --blue-50: #71b7fb;
+  --blue-50-a20: rgba(112, 181, 249, 0.2);
+  --blue-50-a30: rgba(112, 181, 249, 0.3);
+  --blue-50-a40: rgba(112, 181, 249, 0.4);
+  --blue-60: #378fe9;
+  --blue-70: #0a66c2;
+  --blue-70-a30: rgba(10, 102, 194, 0.3);
+  --blue-70-a40: rgba(10, 102, 194, 0.4);
+  --blue-70-a50: rgba(10, 102, 194, 0.5);
+  --blue-80: #004182;
+  --blue-90: #053059;
+  --cool-gray-10: #f8fafd;
+  --cool-gray-20: #edf3f8;
+  --cool-gray-30: #dde7f1;
+  --cool-gray-40: #c2d3e4;
+  --cool-gray-50: #9eb5ca;
+  --cool-gray-60: #788fa5;
+  --cool-gray-70: #56687a;
+  --cool-gray-80: #38434f;
+  --cool-gray-85: #293138;
+  --cool-gray-90: #293037;
+  --warm-gray-10: #fbfaf8;
+  --warm-gray-20: #f4f2ee;
+  --warm-gray-30: #eae6df;
+  --warm-gray-40: #d6cec2;
+  --warm-gray-50: #bbb1a1;
+  --warm-gray-60: #958b7b;
+  --warm-gray-70: #6e6558;
+  --warm-gray-80: #474139;
+  --warm-gray-90: #322f29;
+  --warm-red-10: #fff9f7;
+  --warm-red-20: #ffefea;
+  --warm-red-30: #ffdfd6;
+  --warm-red-40: #fdc2b1;
+  --warm-red-50: #f69b81;
+  --warm-red-60: #e06847;
+  --warm-red-70: #b24020;
+  --warm-red-80: #762812;
+  --warm-red-90: #512012;
+  --teal-10: #eefdff;
+  --teal-20: #ddf7fb;
+  --teal-30: #c1edf4;
+  --teal-40: #94dde8;
+  --teal-50: #5ec0cf;
+  --teal-50-a30: rgba(68, 191, 211, 0.3);
+  --teal-60: #3399a8;
+  --teal-70: #1a707e;
+  --teal-80: #114951;
+  --teal-90: #0e343a;
+  --purple-10: #fcfaff;
+  --purple-20: #f7efff;
+  --purple-30: #efe0ff;
+  --purple-40: #e0c7fc;
+  --purple-40-a15: rgba(222, 197, 253, 0.15);
+  --purple-50: #c8a1f6;
+  --purple-60: #a871ea;
+  --purple-70: #8443ce;
+  --purple-70-a15: rgba(131, 68, 204, 0.15);
+  --purple-80: #592099;
+  --purple-90: #40176f;
+  --system-red-10: #fff9fa;
+  --system-red-20: #ffeef1;
+  --system-red-30: #ffdee3;
+  --system-red-40: #ffc1ca;
+  --system-red-50: #fd93a3;
+  --system-red-60: #f3536b;
+  --system-red-70: #cb112d;
+  --system-red-80: #8a0015;
+  --system-red-90: #640312;
+  --system-green-10: #f0fdf9;
+  --system-green-20: #d6faee;
+  --system-green-30: #aff4dd;
+  --system-green-40: #74e5c0;
+  --system-green-50: #37c898;
+  --system-green-60: #0f9f6f;
+  --system-green-70: #01754f;
+  --system-green-80: #004c33;
+  --system-green-90: #013726;
+  --pink-10: #fff8ff;
+  --pink-20: #ffedfe;
+  --pink-30: #fcddfb;
+  --pink-40: #f6c0f3;
+  --pink-50: #ea95e5;
+  --pink-60: #d160cb;
+  --pink-70: #a734a1;
+  --pink-80: #711c6d;
+  --pink-90: #51164e;
+  --amber-10: #fdfaf5;
+  --amber-20: #fdf0de;
+  --amber-30: #fce3bc;
+  --amber-30-a50: rgba(252, 226, 186, 0.5);
+  --amber-40: #f9c982;
+  --amber-50: #e9a53f;
+  --amber-60: #c37d16;
+  --amber-70: #915907;
+  --amber-80: #5c3b09;
+  --amber-90: #402b0c;
+  --copper-10: #fdf9f8;
+  --copper-20: #fdefec;
+  --copper-30: #fbe1d9;
+  --copper-40: #f4c7bb;
+  --copper-50: #e0a494;
+  --copper-60: #be7b6a;
+  --copper-70: #8f5849;
+  --copper-80: #5d392f;
+  --copper-90: #412922;
+  --green-10: #f4fdf0;
+  --green-20: #e1f9d5;
+  --green-30: #caf1b6;
+  --green-40: #a7e18b;
+  --green-50: #81c360;
+  --green-60: #5f9b41;
+  --green-70: #44712e;
+  --green-80: #2e4921;
+  --green-90: #24331c;
+  --sage-10: #f9fbf8;
+  --sage-20: #edf4ea;
+  --sage-30: #daebd1;
+  --sage-40: #c0d8b4;
+  --sage-50: #9fba91;
+  --sage-60: #7b9370;
+  --sage-70: #5a6b51;
+  --sage-80: #3a4535;
+  --sage-90: #2a3127;
+  --lime-10: #f9fce4;
+  --lime-20: #f0f6cb;
+  --lime-30: #e2eca8;
+  --lime-40: #cbd978;
+  --lime-50: #acba5f;
+  --lime-60: #85942f;
+  --lime-70: #616c20;
+  --lime-80: #3f4618;
+  --lime-90: #2d3118;
+  --camo-10: #fafbf5;
+  --camo-20: #f1f3e5;
+  --camo-30: #e5e9cd;
+  --camo-40: #cfd5af;
+  --camo-50: #b0b68c;
+  --camo-60: #8a8f6c;
+  --camo-70: #65684e;
+  --camo-80: #414335;
+  --camo-90: #2f3027;
+  --smoke-10: #f5fbfc;
+  --smoke-20: #e9f4f6;
+  --smoke-30: #d9e9ec;
+  --smoke-40: #bcd6da;
+  --smoke-50: #98b8bd;
+  --smoke-60: #719196;
+  --smoke-70: #526a6e;
+  --smoke-80: #364547;
+  --smoke-90: #283132;
+  --lavender-10: #fbfafc;
+  --lavender-20: #f4f1f8;
+  --lavender-30: #ebe3f3;
+  --lavender-40: #d9cce7;
+  --lavender-50: #bdabd2;
+  --lavender-60: #9983b1;
+  --lavender-70: #715e86;
+  --lavender-80: #493d57;
+  --lavender-90: #332c3c;
+  --mauve-10: #fbfafb;
+  --mauve-20: #f8eff8;
+  --mauve-30: #f3e1f2;
+  --mauve-40: #e5c8e4;
+  --mauve-50: #cea5cc;
+  --mauve-60: #ac7da9;
+  --mauve-70: #80597e;
+  --mauve-80: #523a51;
+  --mauve-80-a50: rgba(82, 58, 81, 0.5);
+  --mauve-90: #3a2a39;
+  --system-gray-10: #fafafa;
+  --system-gray-20: #f2f2f2;
+  --system-gray-30: #e6e6e6;
+  --system-gray-40: #d1d1d1;
+  --system-gray-50: #b2b2b2;
+  --system-gray-60: #8c8c8c;
+  --system-gray-70: #666;
+  --system-gray-80: #424242;
+  --system-gray-90: #2f2f2f;
+  --system-orange-10: #fff9f5;
+  --system-orange-20: #ffefe5;
+  --system-orange-30: #ffe0cc;
+  --system-orange-40: #ffc5a0;
+  --system-orange-50: #fe9958;
+  --system-orange-60: #e06a1a;
+  --system-orange-70: #ad4601;
+  --system-orange-80: #702f03;
+  --system-orange-90: #4c240a;
+  --transparent: transparent;
+  --transparent-white: hsla(0, 0%, 100%, 0);
+  --transparent-black: transparent;
+  --amber-60-a10: rgb(195 125 22/.1);
+  --amber-60-a15: rgb(195 125 22/.15);
+  --amber-60-a20: rgb(195 125 22/.2);
+  --amber-60-a25: rgb(195 125 22/.25);
+  --amber-60-a30: rgb(195 125 22/.3);
+  --amber-60-a35: rgb(195 125 22/.35);
+  --amber-100: #271d10;
+  --black-a100: #000;
+  --blue-60-a10: rgb(55 143 233/.1);
+  --blue-60-a15: rgb(55 143 233/.15);
+  --blue-60-a20: rgb(55 143 233/.2);
+  --blue-60-a25: rgb(55 143 233/.25);
+  --blue-60-a30: rgb(55 143 233/.3);
+  --blue-60-a35: rgb(55 143 233/.35);
+  --blue-60-a40: rgb(55 143 233/.4);
+  --blue-60-a45: rgb(55 143 233/.45);
+  --blue-100: #0a2037;
+  --camo-60-a10: rgb(138 143 108/.1);
+  --camo-60-a15: rgb(138 143 108/.15);
+  --camo-60-a20: rgb(138 143 108/.2);
+  --camo-60-a25: rgb(138 143 108/.25);
+  --camo-60-a30: rgb(138 143 108/.3);
+  --camo-60-a35: rgb(138 143 108/.35);
+  --camo-100: #1f1f1c;
+  --cool-gray-60-a10: rgb(120 143 165/.1);
+  --cool-gray-60-a15: rgb(120 143 165/.15);
+  --cool-gray-60-a20: rgb(120 143 165/.2);
+  --cool-gray-60-a25: rgb(120 143 165/.25);
+  --cool-gray-60-a30: rgb(120 143 165/.3);
+  --cool-gray-60-a35: rgb(120 143 165/.35);
+  --cool-gray-100: #1b1f23;
+  --copper-60-a10: rgb(190 123 106/.1);
+  --copper-60-a15: rgb(190 123 106/.15);
+  --copper-60-a20: rgb(190 123 106/.2);
+  --copper-60-a25: rgb(190 123 106/.25);
+  --copper-60-a30: rgb(190 123 106/.3);
+  --copper-60-a35: rgb(190 123 106/.35);
+  --copper-100: #2a1c18;
+  --green-60-a10: rgb(95 155 65/.1);
+  --green-60-a15: rgb(95 155 65/.15);
+  --green-60-a20: rgb(95 155 65/.2);
+  --green-60-a25: rgb(95 155 65/.25);
+  --green-60-a30: rgb(95 155 65/.3);
+  --green-60-a35: rgb(95 155 65/.35);
+  --green-100: #192115;
+  --lavender-60-a10: rgb(153 131 177/.1);
+  --lavender-60-a15: rgb(153 131 177/.15);
+  --lavender-60-a20: rgb(153 131 177/.2);
+  --lavender-60-a25: rgb(153 131 177/.25);
+  --lavender-60-a30: rgb(153 131 177/.3);
+  --lavender-60-a35: rgb(153 131 177/.35);
+  --lavender-100: #221d26;
+  --lime-60-a10: rgb(133 148 47/.1);
+  --lime-60-a15: rgb(133 148 47/.15);
+  --lime-60-a20: rgb(133 148 47/.2);
+  --lime-60-a25: rgb(133 148 47/.25);
+  --lime-60-a30: rgb(133 148 47/.3);
+  --lime-60-a35: rgb(133 148 47/.35);
+  --lime-100: #1e2110;
+  --mauve-60-a10: rgb(172 125 169/.1);
+  --mauve-60-a15: rgb(172 125 169/.15);
+  --mauve-60-a20: rgb(172 125 169/.2);
+  --mauve-60-a25: rgb(172 125 169/.25);
+  --mauve-60-a30: rgb(172 125 169/.3);
+  --mauve-60-a35: rgb(172 125 169/.35);
+  --mauve-100: #251c24;
+  --pink-60-a10: rgb(209 96 203/.1);
+  --pink-60-a15: rgb(209 96 203/.15);
+  --pink-60-a20: rgb(209 96 203/.2);
+  --pink-60-a25: rgb(209 96 203/.25);
+  --pink-60-a30: rgb(209 96 203/.3);
+  --pink-60-a35: rgb(209 96 203/.35);
+  --pink-100: #341232;
+  --purple-60-a10: rgb(168 113 234/.1);
+  --purple-60-a15: rgb(168 113 234/.15);
+  --purple-60-a20: rgb(168 113 234/.2);
+  --purple-60-a25: rgb(168 113 234/.25);
+  --purple-60-a30: rgb(168 113 234/.3);
+  --purple-60-a35: rgb(168 113 234/.35);
+  --purple-100: #2a1245;
+  --sage-60-a10: rgb(123 147 112/.1);
+  --sage-60-a15: rgb(123 147 112/.15);
+  --sage-60-a20: rgb(123 147 112/.2);
+  --sage-60-a25: rgb(123 147 112/.25);
+  --sage-60-a30: rgb(123 147 112/.3);
+  --sage-60-a35: rgb(123 147 112/.35);
+  --sage-100: #1d201b;
+  --smoke-60-a10: rgb(113 145 150/.1);
+  --smoke-60-a15: rgb(113 145 150/.15);
+  --smoke-60-a20: rgb(113 145 150/.2);
+  --smoke-60-a25: rgb(113 145 150/.25);
+  --smoke-60-a30: rgb(113 145 150/.3);
+  --smoke-60-a35: rgb(113 145 150/.35);
+  --smoke-100: #1b2021;
+  --system-gray-60-a10: rgb(140 140 140/.1);
+  --system-gray-60-a15: rgb(140 140 140/.15);
+  --system-gray-60-a20: rgb(140 140 140/.2);
+  --system-gray-60-a25: rgb(140 140 140/.25);
+  --system-gray-60-a30: rgb(140 140 140/.3);
+  --system-gray-60-a35: rgb(140 140 140/.35);
+  --system-gray-60-a40: rgb(140 140 140/.4);
+  --system-gray-60-a45: rgb(140 140 140/.45);
+  --system-gray-100: #1f1f1f;
+  --system-green-60-a10: rgb(15 159 111/.1);
+  --system-green-60-a15: rgb(15 159 111/.15);
+  --system-green-60-a20: rgb(15 159 111/.2);
+  --system-green-60-a25: rgb(15 159 111/.25);
+  --system-green-60-a30: rgb(15 159 111/.3);
+  --system-green-60-a35: rgb(15 159 111/.35);
+  --system-green-100: #022419;
+  --system-orange-60-a10: rgb(224 106 26/.1);
+  --system-orange-60-a15: rgb(224 106 26/.15);
+  --system-orange-60-a20: rgb(224 106 26/.2);
+  --system-orange-60-a25: rgb(224 106 26/.25);
+  --system-orange-60-a30: rgb(224 106 26/.3);
+  --system-orange-60-a35: rgb(224 106 26/.35);
+  --system-orange-100: #2f1a0d;
+  --system-red-60-a10: rgb(243 83 107/.1);
+  --system-red-60-a15: rgb(243 83 107/.15);
+  --system-red-60-a20: rgb(243 83 107/.2);
+  --system-red-60-a25: rgb(243 83 107/.25);
+  --system-red-60-a30: rgb(243 83 107/.3);
+  --system-red-60-a35: rgb(243 83 107/.35);
+  --system-red-100: #410911;
+  --teal-60-a10: rgb(51 153 168/.1);
+  --teal-60-a15: rgb(51 153 168/.15);
+  --teal-60-a20: rgb(51 153 168/.2);
+  --teal-60-a25: rgb(51 153 168/.25);
+  --teal-60-a30: rgb(51 153 168/.3);
+  --teal-60-a35: rgb(51 153 168/.35);
+  --teal-100: #0b2226;
+  --warm-gray-60-a10: rgb(149 139 123/.1);
+  --warm-gray-60-a15: rgb(149 139 123/.15);
+  --warm-gray-60-a20: rgb(149 139 123/.2);
+  --warm-gray-60-a25: rgb(149 139 123/.25);
+  --warm-gray-60-a30: rgb(149 139 123/.3);
+  --warm-gray-60-a35: rgb(149 139 123/.35);
+  --warm-gray-100: #211f1c;
+  --warm-red-60-a10: rgb(224 104 71/.1);
+  --warm-red-60-a15: rgb(224 104 71/.15);
+  --warm-red-60-a20: rgb(224 104 71/.2);
+  --warm-red-60-a25: rgb(224 104 71/.25);
+  --warm-red-60-a30: rgb(224 104 71/.3);
+  --warm-red-60-a35: rgb(224 104 71/.35);
+  --warm-red-100: #321811;
+  --white-a30: rgb(255 255 255/.3);
+  --white-a45: rgb(255 255 255/.45);
+  --white-a100: #fff;
+  --color-transparent: var(--transparent-white);
+  --color-transparent-on-dark: var(--transparent-black);
+  --color-brand: var(--blue-70);
+  --color-brand-active: var(--blue-80);
+  --color-brand-alt: var(--black);
+  --color-brand-alt-active: var(--black);
+  --color-brand-on-dark: var(--white-a90);
+  --color-brand-on-dark-active: var(--white-a70);
+  --color-brand-accent-1: var(--amber-70);
+}
+
 html,
 body {
   height: 100%;
@@ -34,21 +413,16 @@ p {
   margin: 0;
 }
 
-/* .content {
-  display: flex;
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 960px;
-  flex-direction: column;
-  align-items: center;
-} */
-
+.spacer {
+  flex: 1;
+}
 
 a,
 a:visited,
 a:hover {
   color: #1976d2;
   text-decoration: none;
+  font-size: 14px;
 }
 
 a:hover {
@@ -60,43 +434,18 @@ ul {
 }
 
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
+/* admin margin */
+.grid-container {
+  margin: 20px;
 }
-
-.card {
-  all: unset;
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
-}
-
- /* "node_modules/bootstrap/dist/css/bootstrap.min.css", */
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {}
 
 @media screen and (max-width: 575px) {}
 
-
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

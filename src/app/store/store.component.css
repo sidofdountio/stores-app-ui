@@ -1,0 +1,18 @@
+mat-form-field {
+    display: block;
+    padding: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 14px rgba(0, 0, 0, .1);
+}
+
+.form {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 575px) {}

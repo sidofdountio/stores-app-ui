@@ -1,8 +1,5 @@
-import { Product } from "./product-interface";
+import { Product } from "./product";
 
 export interface Orders{
-    id?:number;
-    product:Product;
-    quantity:number;
-    amount:number;
+ 
 }

@@ -1,0 +1,9 @@
+/* custurm general css */
+.customer-btn {
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #333;
+    background-color: #FFF;
+    width: 100px;
+}
