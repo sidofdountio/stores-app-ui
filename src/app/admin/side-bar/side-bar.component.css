@@ -2,6 +2,10 @@
   height: 100%;
   background: whitesmoke;
 }
+.logout{
+  margin-left: 8px;
+}
+
 mat-toolbar{
   background-color: white;
   border: 1px solid #eee;
@@ -9,9 +13,7 @@ mat-toolbar{
   /* rgba(140, 140, 140, 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 4px 4px 0px */
 }
 
-.logout{
-  margin-left: 8px;
-}
+
 .sidenav {
   width: 200px;
 }

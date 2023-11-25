@@ -8,7 +8,6 @@ import { AuthenticationResponse } from './model/authentication-response';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { SnackbarComponent } from '../message/snackbar/snackbar.component';
 import { SnackBarData } from '../model/snack-bar-data';
-import { CustomResponse } from '../model/custom-response';
 
 @Injectable({
   providedIn: 'root'

@@ -22,15 +22,19 @@ export class CartComponent implements OnInit {
   itemQuantity: number = 0;
 
   constructor(private router: Router, private appService: AppService) { }
+  
   ngOnInit(): void {
     this.onGetOrders();
     this.onGetAmountOfOrder();
   }
+
   checkout() {
   }
+
   backToStore() {
     this.router.navigate(['/store']);
   }
+
   onGetOrders(): void {
     this.cartItem = this.appService.getItem();
     this.itemQuantity = this.cartItem.length;
