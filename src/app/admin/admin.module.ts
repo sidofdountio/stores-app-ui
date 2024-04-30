@@ -17,7 +17,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
 import {  MatSortModule } from '@angular/material/sort';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
@@ -27,8 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatInputModule} from '@angular/material/input';
-import { MatDialogModule } from '@angular/material/dialog';
 import { EditeProfileComponent } from './user/edite-profile/edite-profile.component';
 
 
@@ -54,7 +54,6 @@ import { EditeProfileComponent } from './user/edite-profile/edite-profile.compon
     BrowserAnimationsModule,
     BrowserModule,
     MatInputModule,
-    MatCardModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,

@@ -5,10 +5,7 @@ import { BehaviorSubject, Observable, Subscription, of } from 'rxjs';
 import { catchError, map, startWith } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/auth.service';
 import { AuthenticationRequest } from 'src/app/auth/model/authentication-request';
-import { AuthenticationResponse } from 'src/app/auth/model/authentication-response';
-import { AppState } from 'src/app/model/app-state';
-import { CustomResponse } from 'src/app/model/custom-response';
-import { DataState } from 'src/app/model/data-state';
+
 
 @Component({
   selector: 'app-store-log',

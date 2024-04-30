@@ -8,7 +8,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DialogService {
  
- 
   data:Data={
     message: '',
     discase: false
@@ -18,7 +17,6 @@ export class DialogService {
   constructor(private dialogue:MatDialog) { }
  
   confirmMessage(message:string){
-    let discase=false;
     const dialogConf = new MatDialogConfig();
     dialogConf.autoFocus=true;
     dialogConf.disableClose=true;
@@ -38,16 +36,12 @@ export class DialogService {
     );
   }
 
-  closeEditeDialogProduct(discaseValue:boolean): void{
-    
-  }
-
   closeEditeDialog$(): Observable<boolean> {
-   return this.discase.asObservable();
-  }
-  updateValue() {
-    this.discase.next(false);
-  }
+    return this.discase.asObservable();
+   }
+   updateValue() {
+     this.discase.next(false);
+   }
 }
 
 export interface Data{

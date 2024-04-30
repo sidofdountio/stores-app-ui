@@ -63,7 +63,11 @@ export class AppService {
 
   // Get users
   public getUsers(): Observable<CustomResponse> {
-    return this.http.get<CustomResponse>(`${this.baseUrl}/user/users`);
+    return this.http.get<CustomResponse>(`${this.baseUrl}/user/users`,{
+      headers: new HttpHeaders({
+        "Authorization":`Bearer ${localStorage.getItem('token')
+      }`})
+    });
   }
 
  
