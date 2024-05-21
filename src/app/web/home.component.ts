@@ -51,4 +51,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     return this.appService.getItem();
   }
 
+  productDetail(arg0: number | undefined) {
+   console.log('Method not implemented.');
+  }
 }

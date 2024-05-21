@@ -18,6 +18,8 @@ button {
     border: 1px solid #ccc;
     background: white;
     top: 50px;
+    width: 500px;
+    
 }
 
 @media screen and (max-width: 575px) {

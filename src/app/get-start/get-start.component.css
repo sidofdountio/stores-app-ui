@@ -1,0 +1,12 @@
+.getStarted{
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #333;
+}
+
+/* If the screen size is 600px wide or less, hide the element */
+@media only screen and (max-width: 600px) {
+    
+  }

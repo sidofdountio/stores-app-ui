@@ -8,19 +8,20 @@
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
             <mat-list class="cart">
-                <div *ngIf="cartItem.length !== 0">
-                    <mat-list-item *ngFor="let order of cartItem">
-                        <img src="{{ order?.product?.imageUrl }}" alt="">
-                        <span class="product-name ">{{ order?.product?.name }}</span>
-                        <span class="product-price">{{ order?.product?.price| CustomCurrency }} </span>
-                        <button type="button" mat-mini-fab color="warn" class="delete"
-                            (click)="onRemoveItem(order)"><mat-icon>delete</mat-icon></button>
-                        <div class="update-quantity mt-1">
+                <div *ngFor="let order of cartItem">
+                    <mat-list-item class=" list-iteme">
+                        <img src="{{ order?.product?.imageUrl }}" alt="" class="img-fluid">
+                        <div class="d-flex justify-content-between">
+                            <span class="product-price">{{ order?.product?.price }} </span>
+                            <button type="button" mat-mini-fab color="warn" class="delete"
+                                (click)="onRemoveItem(order)"><mat-icon>delete</mat-icon></button>
+                        </div>
+                        <div class="update-quantity d-flex justify-content-between">
                             <button type="button" mat-mini-fab color="" (click)="removeQuantity(order)"
-                                class="customer-btn "><mat-icon>remove</mat-icon></button>
+                                class="customer-btn"><mat-icon>remove</mat-icon></button>
                             <span>{{ order?.quantity }}</span>
                             <button type="button" mat-mini-fab color="" (click)="addQuantity(order)"
-                                class="customer-btn addQuantity"><mat-icon>add</mat-icon></button>
+                                class="customer-btn "><mat-icon>add</mat-icon></button>
                         </div>
                     </mat-list-item>
                 </div>
@@ -63,7 +64,7 @@
         <div class="col-sm-12">
             <button type="button" mat-raised-button class="cancel" (click)="backToStore()"><mat-icon>store</mat-icon>
                 store</button>
-               
+
             <button type="button" mat-raised-button class="checkout" (click)="checkout()">
                 <mat-icon>shopping_cart</mat-icon> buy</button>
         </div>

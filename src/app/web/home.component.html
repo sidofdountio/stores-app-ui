@@ -15,16 +15,16 @@
     <!-- user log -->
     <button mat-icon-button [matMenuTriggerFor]="menu"> <mat-icon>person</mat-icon> </button>
     <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/login" routerLinkActive="active">Sing in</button>
-    <button mat-menu-item routerLink="/connect-to-store" routerLinkActive="active" >Go to store</button>
+        <button mat-menu-item routerLink="/login" routerLinkActive="active">Sing in</button>
+        <button mat-menu-item routerLink="/connect-to-store" routerLinkActive="active">Go to store</button>
     </mat-menu>
 </div>
 <div class="container">
 
     <h3>You'r now on {{ "title" }} !</h3>
-    <div class="row mb-3">
+    <div class="row mb-3 pt-4">
         <div class="col-md-12 col-sm-12 col-lg-12">
-            <mat-card class="cover text-white mat-card-image">
+            <mat-card class=" text-white mat-card-image">
                 <mat-card-content class="">
                     <mat-card-subtitle>Discount</mat-card-subtitle>
                     <mat-card-subtitle>Up to</mat-card-subtitle>
@@ -78,31 +78,25 @@
     </div>
     <div class="row mb-3">
         <h3 class="me-auto fw-bold"> Popular Product</h3>
-
-        <main>
-
-            <mat-card class="product" *ngFor="let product of products">
-                <img mat-card-image src="{{ product?.imageUrl }}" alt="" />
-                <mat-card-content class="p-1">
-                    <mat-card-subtitle>{{ product?.name }}</mat-card-subtitle>
-                    <mat-card-title>
-                        <span class="price">{{ product?.price | CustomCurrency }}</span>
-                    </mat-card-title>
-                </mat-card-content>
-                <mat-card-actions>
+        <div class="row">
+            <div class="col-md-6 col-lg-4  mb-3" *ngFor="let product of products">
+                <div class="card custorm-card" style="width: 18rem;" (click)="productDetail(product.id)">
                     <button type="button" mat-icon-button aria-label="favorie" id="like" matTooltip="Like"
                         (click)="onToggleFavorite(product)">
                         <mat-icon *ngIf="product.isFavorite" class="favorite">favorite</mat-icon>
                         <mat-icon *ngIf="!product.isFavorite" class="unfavorite">favorite</mat-icon>
                     </button>
-
-                    <button type="button" mat-raised-button color="warn" matTooltip="Add product"
-                        (click)="onPlaceOrder(product)">Buy</button>
-                </mat-card-actions>
-            </mat-card>
-
-        </main>
-
+                    <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="card-title">{{product.name}}</h2>
+                        <p class="card-text d-flex justify-content-end " ><small class="price">{{product.price | currency}}</small></p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <button class="custorm-btn" (click)="onPlaceOrder(product)">Add To Card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Footer -->
     <footer>
